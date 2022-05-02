@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/seven-task/static/js/main.cd6468b3.js",
+    "main.js": "/seven-task/static/js/main.d05514be.js",
     "static/media/Smallville.jpeg": "/seven-task/static/media/Smallville.c4c6408e7b16690baf67.jpeg",
     "static/media/Little_Women-LA.jpeg": "/seven-task/static/media/Little_Women-LA.977fb09ef2ef749a0a53.jpeg",
     "static/media/7plus.png": "/seven-task/static/media/7plus.f36c821c6156bca4c676.png",
@@ -13,9 +13,9 @@
     "static/media/Transformed.jpeg": "/seven-task/static/media/Transformed.b23d53c34b25185df22f.jpeg",
     "static/media/Liar.jpeg": "/seven-task/static/media/Liar.0a8911b4d48add4f8572.jpeg",
     "index.html": "/seven-task/index.html",
-    "main.cd6468b3.js.map": "/seven-task/static/js/main.cd6468b3.js.map"
+    "main.d05514be.js.map": "/seven-task/static/js/main.d05514be.js.map"
   },
   "entrypoints": [
-    "static/js/main.cd6468b3.js"
+    "static/js/main.d05514be.js"
   ]
 }
