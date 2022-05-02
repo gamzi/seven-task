@@ -12,9 +12,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 * As the provided designs were not in formats like Figma/Sketch but i measured them in photoshop, and as i am not aware of a design system here that would dictate standard sizings (ie. padding, margin..), i went with what seemed to me like logical numbers. Due to this, the size of the 7 logo in the card footer does not perfectly match the one in the design, this is because in my implementation the footer has a padding of 10px and the logo will be as high/large as the leftover space in the footer. This was a conscious decision on my part as i thought i should prioritize the logical/design consistency of the padding and footer sizing.
 
-* The font was not provided so i went left the one from `create-react-app`.
+* The font was not provided so i left the one from `create-react-app`.
 
-* At a certain screen size the card can only show as one per row, so i decided to center them at that point insted of the `space-between` content justification in the design.
+* At a certain screen size the there can be only one card per row. So i decided to center them at that point, instead of the `space-between` content justification from the design.
 
 * I am not too opinionated on my coding style, so things like "destructuring props" or "each component property is a new line" are what i thought looks better at the moment but i'd be happy to change if necessary.
 
