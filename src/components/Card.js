@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import logo from '../assets/7plus.png';
 
-const StyledCard = styled.div`
+const Root = styled.div`
     position: relative;
     cursor: pointer;
     flex-shrink: 0;
@@ -9,60 +9,73 @@ const StyledCard = styled.div`
     width: 100%;
     margin: 10px;
 
+    @media(min-width: 812px) {
+        max-width: 350px;
+    }
+
     @media(min-width: 1024px) {
         max-width: 385px;
     }
 `;
 
-const CardImage = styled.div`
+const Image = styled.div`
     width: 100%;
-    padding-top: 56.25%;
+    padding-top: ${9/16 * 100}%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image url(${props => props.imageSrc});
+    background-image url(${({imageSrc}) => imageSrc});
 `;
 
-const CardFooter = styled.div`
+const Footer = styled.div`
     display: flex;
     align-items: center;
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 55px;
     background-color: rgba(0,0,0,0.6);
-    font-size: 18px;
+    height: 55px;
+    font-size: 20px;
     font-weight: bold;
     color: white;
     padding: 10px;
 
+    @media(min-width: 812px) {
+        height: 60px;
+        font-size: 22px;
+    }
+
     @media(min-width: 1024px) {
         height: 65px;
-        font-size: 24px;
+        font-size: 25px;
     }
 `;
 
-const CardLogo = styled.img`
+const Logo = styled.img`
     height: 100%;
-    margin: 0 10px 0 0;
+    margin: 0 14px 0 0;
     user-select: none;
 `;
 
-const CardTitle = styled.span`
+const Title = styled.span`
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 `;
 
-function Card(props) {
+const Card = ({onClick, role, itemData}) => {
     return (
-        <StyledCard onClick={props.handleCardClick} role={props.role} aria-label="show-card">
-            <CardImage imageSrc={props.itemData.image}></CardImage>
-            <CardFooter>
-                <CardLogo src={logo}></CardLogo>
-                <CardTitle>{props.itemData.title}</CardTitle>
-            </CardFooter>
-        </StyledCard>
+        <Root 
+            onClick={onClick}
+            role={role}
+            aria-label="show-card"
+        >
+            <Image imageSrc={itemData.image}/>
+            <Footer>
+                <Logo src={logo}/>
+                <Title>{itemData.title}</Title>
+            </Footer>
+        </Root>
     );
 }
   

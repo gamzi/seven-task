@@ -63,7 +63,7 @@ const SidePanel = styled.div`
     width: 50%;
     right: 0;
     padding: 10px;
-    right: ${props => props.showSidePanel ? '50%' : '100%'};
+    right: ${({visible}) => visible ? '50%' : '100%'};
     transition: right 400ms;
     display: flex;
     justify-content: center;
@@ -72,47 +72,58 @@ const SidePanel = styled.div`
 
     @media(max-width: 425px) {
         width: 100%;
-        right: ${props => props.showSidePanel ? 0 : '100%'};
+        right: ${({visible}) => visible ? 0 : '100%'};
     }
 `;
 
-const CardGridWrapper = styled.div`
+const CardGrid = styled.div`
     display: flex;
     flex-wrap: wrap;
     padding: 10px;
     list-style-type: none;
     justify-content: space-between;
 
-    @media(max-width: 425px) {
+    @media(max-width: 700px) {
         justify-content: space-around;
     }
 `;
 
-function App() {
-    const [focusedCard, setFocusedCard] = useState({});
-    const [showSidePanel, setShowSidePanel] = useState(false);
+const App = () => {
+    const [seletedItem, setSeletedItem] = useState({});
+    const [sidePanelVisibility, setSidePanelVisibility] = useState(false);
 
-    function handleItemFocus(cardData) {
-        if (cardData.id === focusedCard.id) {
-            setShowSidePanel(!showSidePanel);
+    const selectItem = (cardData) => {
+        if (cardData.id === seletedItem?.id) {
+            setSidePanelVisibility(!sidePanelVisibility);
         } else {
-            setShowSidePanel(true);
-            setFocusedCard(cardData);
+            setSidePanelVisibility(true);
+            setSeletedItem(cardData);
         }
     };
 
     return (
         <>
-            <CardGridWrapper role="list">
+            <CardGrid role="list">
                 {
                     itemList.map((item) =>
-                        <Card key={item.id} role="listitem" itemData={item} handleCardClick={() => handleItemFocus(item)}></Card>
+                        <Card
+                            key={item.id}
+                            role="listitem"
+                            itemData={item}
+                            onClick={() => selectItem(item)}
+                        />
                     )
                 }
-            </CardGridWrapper>
+            </CardGrid>
 
-            <SidePanel showSidePanel={showSidePanel} aria-label="side-panel">
-                <Card itemData={focusedCard} handleCardClick={() => setShowSidePanel(false)} ></Card>
+            <SidePanel
+                visible={sidePanelVisibility}
+                aria-label="side-panel"
+            >
+                <Card
+                    itemData={seletedItem}
+                    onClick={() => setSidePanelVisibility(false)}
+                />
             </SidePanel>
         </>
     );
