@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.js": "/seven-task/static/js/main.cd6468b3.js",
+    "static/media/Smallville.jpeg": "/seven-task/static/media/Smallville.c4c6408e7b16690baf67.jpeg",
+    "static/media/Little_Women-LA.jpeg": "/seven-task/static/media/Little_Women-LA.977fb09ef2ef749a0a53.jpeg",
+    "static/media/7plus.png": "/seven-task/static/media/7plus.f36c821c6156bca4c676.png",
+    "static/media/Revolution.jpeg": "/seven-task/static/media/Revolution.0eda61b9211fcaec8317.jpeg",
+    "static/media/Gold_Digger.jpeg": "/seven-task/static/media/Gold_Digger.5681db34cb923fe3ea2d.jpeg",
+    "static/media/The_Resident.jpeg": "/seven-task/static/media/The_Resident.d84bf3b9d64d4f79543e.jpeg",
+    "static/media/Pooch_Perfect.jpeg": "/seven-task/static/media/Pooch_Perfect.47c8920ce5d417f44de2.jpeg",
+    "static/media/The_Good_Doctor.jpeg": "/seven-task/static/media/The_Good_Doctor.4af189302b05c6fa4756.jpeg",
+    "static/media/MKR.jpeg": "/seven-task/static/media/MKR.576c87d6478bb57f89c0.jpeg",
+    "static/media/Transformed.jpeg": "/seven-task/static/media/Transformed.b23d53c34b25185df22f.jpeg",
+    "static/media/Liar.jpeg": "/seven-task/static/media/Liar.0a8911b4d48add4f8572.jpeg",
+    "index.html": "/seven-task/index.html",
+    "main.cd6468b3.js.map": "/seven-task/static/js/main.cd6468b3.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.cd6468b3.js"
+  ]
+}
