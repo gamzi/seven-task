@@ -4,7 +4,6 @@ import logo from '../assets/7plus.png';
 const Root = styled.div`
     position: relative;
     cursor: pointer;
-    flex-shrink: 0;
     max-width: 320px;
     width: 100%;
     margin: 10px;

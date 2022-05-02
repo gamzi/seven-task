@@ -1,70 +1,29 @@
-# Getting Started with Create React App
+# Seven task
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+### Assumptions and reasons for the chosen approach
 
-In the project directory, you can run:
+I assume that the data for various shows, including their images, would come from an API. In this implementation i made a dummy representation of that response as `itemList`, for which i import the local images with `require`.
 
-### `npm start`
+I assume that the card dimensions are following the 16:9 aspect ratio, my measurements in Photoshop for this were off by a pixel or two but i decided to go with my gut feeling of what the designer wanted (16:9) and implemented a solution for card sizing that follows the aspect ratio no matter what card width we set. In our case there are 3 different hardcoded card widths, as measured in the design files, but the card should now also resize as 16:9 when the screen is less than 375 or we want to add more card widths in the future.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+I added truncating/ellipsis for long show titles as i would expect longer show titles than just the ones in the design (ie. It's Always Sunny in Philadelphia)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+As the provided designs were not in formats like Figma/Sketch but i measured them in photoshop, and as i am not aware of a design system here that would dictate standard sizings (ie. padding, margin..), i went with what seemed to me like logical numbers. Due to this, the size of the 7 logo in the card footer does not perfectly match the one in the design, this is because in my implementation the footer has a padding of 10px and the logo will be as high/large as the leftover space in the footer. This was a conscious decision on my part as i thought i should prioritize the logical/design consistency of the padding and footer sizing.
 
-### `npm test`
+The font was not provided so i went left the one from `create-react-app`.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+At a certain screen size the card can only show as one per row, so i decided to center them at that point insted of the `space-between` content justification in the design.
 
-### `npm run build`
+I am not too opinionated on my coding style, so things like "destructuring props" or "each component property is a new line" are what i thought looks better at the moment but i'd be happy to change if necessary.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+I assumed that we want to close the panel not only when clicking the card inside the panel but also when clicking the same card in the grid. The assignment description wasn't too clear on that but i went with what i thought was right.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### What could you have done better if time was not a constraint
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The panel, regrettably, persists in the DOM even when it is not in use. This is to allow us the 400ms animation when the panel closes instead of instantly removing it. For now i wanted to avoid what i assume would be unecessary complications in the code so didn't think it was worth it to introduce something like `timeout`.
+Although i don't think that the simple panel being in the dom is a big issue i would maybe try to find out if there was an elegant solution to remove the panel only AFTER the 400ms animatio ends.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Tests are i think they my weakest link here and the "hardcoded data" changed what i would have usually tried to do. For example, normally i would have looked into mocking the API response with some sort of mock data, and then used that mock data to check if the correct card was shown.
+I would like to spend more time on tests in general.

@@ -41,7 +41,7 @@ const itemList = [
     },
     {
         id: '8',
-        title: 'The Good DoctorThe Good DoctorThe Good DoctorThe Good Doctor',
+        title: 'The Good Doctor',
         image: require(`./assets/The_Good_Doctor.jpeg`)
     },
     {
@@ -92,12 +92,12 @@ const App = () => {
     const [seletedItem, setSeletedItem] = useState({});
     const [sidePanelVisibility, setSidePanelVisibility] = useState(false);
 
-    const selectItem = (cardData) => {
-        if (cardData.id === seletedItem?.id) {
+    const selectItem = (itemData) => {
+        if (itemData.id === seletedItem?.id) {
             setSidePanelVisibility(!sidePanelVisibility);
         } else {
             setSidePanelVisibility(true);
-            setSeletedItem(cardData);
+            setSeletedItem(itemData);
         }
     };
 
