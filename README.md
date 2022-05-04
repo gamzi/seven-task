@@ -10,8 +10,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 * I added truncating/ellipsis for long show titles as i would expect longer show titles than just the ones in the design (ie. It's Always Sunny in Philadelphia)
 
-* As the provided designs were not in formats like Figma/Sketch but i measured them in photoshop, and as i am not aware of a design system here that would dictate standard sizings (ie. padding, margin..), i went with what seemed to me like logical numbers. Due to this, the size of the 7 logo in the card footer does not perfectly match the one in the design, this is because in my implementation the footer has a padding of 10px and the logo will be as high/large as the leftover space in the footer. This was a conscious decision on my part as i thought i should prioritize the logical/design consistency of the padding and footer sizing.
-
+* As the provided designs were not in formats like Figma/Sketch but i measured them in photoshop, and as i am not aware of a design system here that would dictate standard sizings (ie. padding, margin..), i went with what seemed to me like logical numbers. Due to this, the size of the 7 logo in the card footer does not perfectly match the one in the design, this is because in my implementation the footer has a padding of 10px and the logo will be as high/large as the leftover space in the footer. This was a conscious decision on my part as i thought i should prioritize the logical/design consistency of the padding and footer sizing, normally i would get in touch with the designer here.
 * The font was not provided so i left the one from `create-react-app`.
 
 * At a certain screen size the there can be only one card per row. So i decided to center them at that point, instead of the `space-between` content justification from the design.
@@ -25,5 +24,5 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 * The panel, regrettably, persists in the DOM even when it is not in use. This is to allow us the 400ms animation when the panel closes instead of instantly removing it. For now i wanted to avoid what i assume would be unecessary complications in the code so didn't think it was worth it to introduce something like `timeout`.
 Although i don't think that the simple panel being in the dom is a big issue i would maybe try to find out if there was an elegant solution to remove the panel only AFTER the 400ms animatio ends.
 
-* Tests are i think they my weakest link here and the "hardcoded data" changed what i would have usually tried to do. For example, normally i would have looked into mocking the API response with some sort of mock data, and then used that mock data to check if the correct card was shown.
+* Tests are i think my weakest link here and the "hardcoded data" changed what i would have usually tried to do. For example, normally i would have looked into mocking the API response with some sort of mock data, and then used that mock data to check if the correct card was shown.
 I would like to spend more time on tests in general.
